@@ -1,0 +1,15 @@
+.top{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    height: 8vh;
+}
+
+.top-element{
+    width: 33vw;
+}
+
+.top-center-element{
+    display: flex;
+    align-items: center;
+}

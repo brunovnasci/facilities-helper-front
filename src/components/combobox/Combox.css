@@ -1,0 +1,17 @@
+.combo {
+    display: flex;
+    margin: 5px;
+    padding: 5px;
+}
+
+.select{
+    background-color: #333333;
+    color: white;
+    border: none;
+}
+
+.combo-item{
+    border: none;
+    background-color: #333333;
+    color: white;
+}

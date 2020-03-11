@@ -1,0 +1,16 @@
+.card-body {
+    border-width: 2px;
+    border-color: white;
+    border-style: solid;
+    padding: 10px;
+}
+
+.alerta-feito {
+    text-decoration: line-through;
+}
+
+.card-alert-footer{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
