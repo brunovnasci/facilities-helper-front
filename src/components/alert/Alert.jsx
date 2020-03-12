@@ -1,6 +1,7 @@
 import React, { useEffect,useState } from 'react';
 import history from '../../services/history';
-import PersonCard from '../personCard/PersonCard';
+import AlertInfo from '../alertinfo/AlertInfo';
+import Loading from '../loading/Loading';
 
 import './Alert.css';
 
@@ -22,6 +23,7 @@ export default (props) => {
         var date = a.getDate();
         var hour = a.getHours();
         var min = a.getMinutes();
+        min = (min < 10 ? '0' : '') + a.getMinutes();
         // var sec = a.getSeconds();
         var time = date + '/' + month + '/' + year + ' às ' + hour + ':' + min;
         return time;
@@ -53,7 +55,7 @@ export default (props) => {
                 return returnAlert();
             }
         }else{
-            return(<h1>carregando</h1>);
+            return(<Loading />);
         }
         
     }
@@ -69,21 +71,12 @@ export default (props) => {
 
     const returnAlert = () => {
         return(
-            <>
-                <h1>Mensagem: {alert.mensagem}</h1>
-                <h2>Andar: {alert.andar}</h2>
-                <h2>Banheiro {alert.generoBanheiro}</h2>
-                <h3>Criado em {timeConverter(alert.dataDeCriacao)}</h3>
-                <h3>{alert.estaFeita ? "Alerta foi atendido: "+timeConverter(alert.dataDeConclusao) : "Alerta nao foi atendido"}</h3>
-                <button onClick={modificarStatusAlerta}>{alert.estaFeita ? "Marcar como nao atendido" : "Marcar como atendido"}</button>
-                <br />
-                <PersonCard id={alert.person}/>
-            </>
+            <AlertInfo alert={alert} timeConverter={timeConverter} modificarStatusAlerta={modificarStatusAlerta}/>
         );
     }
 
     return(
-        <div>
+        <div className="alert-body">
             {verifyError()}
         </div>
         

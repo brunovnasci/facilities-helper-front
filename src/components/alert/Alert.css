@@ -1,3 +1,9 @@
 .esta-feita{
     text-decoration: line-through;
 }
+
+.alert-body{
+    background-color: #0c3455;
+    height: 91.3vh;
+    padding-top: 4px;
+}

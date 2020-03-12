@@ -1,15 +1,27 @@
 import React from 'react';
-import LogoutButton from '../logoutButton/LogoutButton';
-import GoBackButton from '../goBackButton/GoBackButton';
+import TopButton from '../topbutton/TopButton';
+import { faSignOutAlt } from '@fortawesome/free-solid-svg-icons';
+import { faLongArrowAltLeft } from '@fortawesome/free-solid-svg-icons';
 
+import history from '../../services/history';
 import './TopBar.css';
 
 export default (props) => {
+
+    const logout = () => {
+        localStorage.removeItem("token");
+        history.push("/");
+    }
+
+    const goBack = () => {
+        history.goBack();
+    }
+
     return(
         <div className="top">
-            <GoBackButton />
+            <TopButton onClick={goBack} icon={faLongArrowAltLeft}/>
             <div className="top-center-element">{props.nomePagina}</div>
-            <LogoutButton />
+            <TopButton onClick={logout} icon={faSignOutAlt} />
         </div>
     );
 }

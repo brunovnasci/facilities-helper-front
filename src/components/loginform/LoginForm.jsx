@@ -44,17 +44,19 @@ const Login = () => {
     }
 
     return(
-        <form className="form-div" onSubmit={(e) => clicarNoLogin(e)}>
-            <Textbox icon={faUser} onChange={handleOnChangeEmail} placeholder="Email" id="email" required type="email"/>
-            <Textbox icon={faUnlockAlt} onChange={handleOnChangePassword} placeholder="Senha" id="pswd" required type="password"/>
-            <Button placeholder="Login"/>
-            {erro.length === 0 ? "" : 
-                erro.map((erroName, index) =>{
-                    return <p key={index}>{erroName}</p>
-                })
-            }
-            <Link to="/register">Registrar</Link>
-        </form>
+        <div className="form-body">
+            <form className="form-div" onSubmit={(e) => clicarNoLogin(e)}>
+                <Textbox icon={faUser} onChange={handleOnChangeEmail} placeholder="Email" id="email" required type="email"/>
+                <Textbox icon={faUnlockAlt} onChange={handleOnChangePassword} placeholder="Senha" id="pswd" required type="password"/>
+                <Button placeholder="Login" color="green"/>
+                {erro.length === 0 ? "" : 
+                    erro.map((erroName, index) =>{
+                        return <p key={index}>{erroName}</p>
+                    })
+                }
+                <Link to="/register" className="link">Registre-se agora!</Link>
+            </form>
+        </div>
     );
 }
 

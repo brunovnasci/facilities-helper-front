@@ -2,6 +2,8 @@ import React, { useState, useEffect } from 'react';
 
 import api from '../../services/api';
 
+import './PersonCard.css';
+
 export default (props) => {
 
     const[person, setPerson] = useState(null);
@@ -25,28 +27,29 @@ export default (props) => {
     const returnCard = () => {
         if(isLoaded){
             if(!erro){
-                console.log(person);
                 return(
                     <>
-                    <h3>Nome: {person.nome + ' ' + person.sobrenome}</h3>
-                    <h3>Email: {person.email}</h3>
+                        <h4>Quem nos alertou:</h4>
+                        <div className="info">
+                            <h4>Nome: {person.nome + ' ' + person.sobrenome}</h4>
+                            <h4>Email: {person.email}</h4>
+                        </div>
                     </>
                 );
             }else{
                 return(
-                    <h2>Nao foi possivel localizar o usuario! :(</h2>
+                    <h4>Nao foi possivel localizar o usuario! :(</h4>
                 );
             }
         }else{
             return(
-                <h1>Carregando!</h1>
+                <h4>Carregando!</h4>
             );
         }
     }
 
     return(
-        <div>
-            <h2>Quem nos alertou:</h2>
+        <div className="person">
             {returnCard()}
         </div>
     );

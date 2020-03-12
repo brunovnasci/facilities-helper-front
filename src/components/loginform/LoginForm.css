@@ -2,4 +2,32 @@
     display: flex;
     align-items: center;
     flex-direction: column;
+    background-color: #002c41;
+    height: 100%;
+}
+
+.form-body{
+    height: 92vh;
+}
+
+.link {
+    text-decoration: none;
+    color: white;
+    margin: 15px;
+}
+
+.link:link {
+    color: white;
+}
+
+.link:visited {
+    color: white;
+}
+
+.link:hover {
+    color: #8dc63f;
+}
+
+.link:active {
+    color: #8dc63f;
 }

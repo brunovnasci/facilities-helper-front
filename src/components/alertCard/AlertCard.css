@@ -1,16 +1,20 @@
 .card-body {
-    border-width: 2px;
-    border-color: white;
-    border-style: solid;
     padding: 10px;
+    border-style: solid;
+    border-color: #88c645;
+    background-color: white;
+    border-radius: 5px;
+    margin: 2vh 8vw 0vh 8vw;
 }
 
 .alerta-feito {
     text-decoration: line-through;
 }
+.feito {
+    border-color: #ff3e1a;
+}
 
 .card-alert-footer{
     display: flex;
-    flex-direction: row;
     justify-content: space-between;
 }

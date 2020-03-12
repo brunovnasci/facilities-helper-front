@@ -1,7 +1,16 @@
 .button-body {
-    background-color: #333333;
-    height: 50px;
-    width: 100px;
+    padding: 10px 20px 10px 20px;
     border: none;
+    border-radius: 50px;
     color: white;
+    font-family: 'Noto Sans', sans-serif;
+    font-size: 17px;
+}
+
+.blue {
+    background-color: #0c3455;
+}
+
+.green {
+    background-color: #8dc63f;
 }

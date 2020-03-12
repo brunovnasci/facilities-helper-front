@@ -12,14 +12,12 @@
 
 .text{
     border: none;
-    background-color: #333333;
-    color: white;
+    background-color: white;
+    color: black;
 }
-
-::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
-    color: white;
-    font-style: italic;
-    opacity: 1; /* Firefox */
+input::placeholder{
+    color: black;
+    font-family: 'Noto Sans', sans-serif;
 }
 input:focus::placeholder{
     color: transparent;
