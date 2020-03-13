@@ -3,6 +3,7 @@ import Card from '../alertCard/AlertCard';
 import WelcomeCard from '../welcomeCard/WelcomeCard';
 import DenunciaCard from '../denunciacard/DenunciaCard';
 import Loading from '../loading/Loading';
+import TitleCard from '../titleCard/TitleCard';
 
 import api from '../../services/api';
 import history from '../../services/history';
@@ -67,9 +68,9 @@ export default () => {
             <>
                 <WelcomeCard person={person} />
                 <div>
-                    {!alerts ? <h1>carregando alertas!</h1> : alerts.map( (alert) => 
+                    {alerts.length !== 0 ? alerts.map( (alert) => 
                         <Card alert={alert} key={alert.id}/>
-                    )}
+                    ) : <TitleCard title="Ops! Ainda não há alertas!"/>}
                 </div>
             </>
         );
