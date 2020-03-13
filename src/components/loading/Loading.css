@@ -47,3 +47,7 @@
 .centralizar-v-children{
     width: 20vh;
 }
+
+.loading-body {
+    background-color: #002c41;
+}

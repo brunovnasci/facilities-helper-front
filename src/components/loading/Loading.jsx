@@ -4,7 +4,7 @@ import './Loading.css';
 
 export default () => {
     return(
-        <div>
+        <div className="loading-body">
             <div className="centralizar-h"></div>
             <div className="centralizar-v">
                 <div className="centralizar-v-children"></div>
