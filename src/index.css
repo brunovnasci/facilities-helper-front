@@ -5,3 +5,25 @@ body{
     font-family: 'Noto Sans', sans-serif;
     width: 100%;
 }
+
+.link {
+    text-decoration: none;
+    color: white;
+    margin: 15px;
+}
+
+.link:link {
+    color: white;
+}
+
+.link:visited {
+    color: white;
+}
+
+.link:hover {
+    color: #8dc63f;
+}
+
+.link:active {
+    color: #8dc63f;
+}
