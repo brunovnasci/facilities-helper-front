@@ -9,6 +9,7 @@ import Combobox from '../combobox/Combox';
 import Successful from '../successful/Successful';
 
 import api from '../../services/api';
+import history from '../../services/history';
 
 import './CreateAlert.css';
 
@@ -48,15 +49,19 @@ export default () => {
         }
     }
 
-    let places = ["","Banheiro masculino", "Banheiro feminino"];
-    let andarItems = ["", "Terreo", "Primeiro andar"];
+    const pushMenu = (props) => {
+        history.push("home");
+    }
+
+    let places = ["Banheiro masculino", "Banheiro feminino"];
+    let andarItems = ["Terreo", "Primeiro andar"];
 
     return(
         <div className="create-body">
-            {isCreating ? (!isCreated ? <Loading /> : <Successful />)  :  
+            {isCreating ? (!isCreated ? <Loading /> : <Successful push={pushMenu} title="Alerta criado!" titlebtn="Voltar ao menu" />)  :  
                 <form className="form-div" onSubmit={(e) => clicarRegister(e)}>
-                    <Combobox itens={andarItems} onChange={handleOnChangeAndar} icon={faBuilding}/>
-                    <Combobox itens={places} onChange={handleOnChangePlaces} icon={faLocationArrow}/>
+                    <Combobox itens={andarItems} onChange={handleOnChangeAndar} icon={faBuilding} placeholder="Andar"/>
+                    <Combobox itens={places} onChange={handleOnChangePlaces} icon={faLocationArrow} placeholder="Local"/>
                     <Textbox icon={faCommentAlt} onChange={handleOnChangeMensagem} placeholder="Mensagem" id="msg" required />
                     <Button placeholder="Criar" color="green"/>
                     {!erro ? "Algo de errado!" : ""}
