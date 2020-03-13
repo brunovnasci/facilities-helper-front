@@ -1,12 +1,13 @@
 .textbox{
     display: flex;
     margin: 5px;
-    padding: 5px;
+    background-color: white;
 }
 
 .textbox-child{
     margin: 5px;
-    color: white;
+    color: #8dc63f;
+    padding: 5px;
     font-size: 20px;
 }
 
