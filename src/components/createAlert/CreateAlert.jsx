@@ -1,14 +1,16 @@
 import React from 'react';
 import { useState } from 'react';
 
-import { faBuilding, faVenusMars,faCommentAlt } from '@fortawesome/free-solid-svg-icons';
+import { faBuilding, faLocationArrow,faCommentAlt } from '@fortawesome/free-solid-svg-icons';
 import Textbox from '../textbox/Textbox';
 import Button from '../button/Button';
-import NumberPicker from '../numberpicker/NumberPicker';
+import Loading from '../loading/Loading';
 import Combobox from '../combobox/Combox';
+import Successful from '../successful/Successful';
 
 import api from '../../services/api';
-import history from '../../services/history';
+
+import './CreateAlert.css';
 
 export default () => {
 
@@ -16,13 +18,15 @@ export default () => {
     const [generoBanheiro, setGeneroBanheiro] = useState("");
     const [mensagem, setMensagem] = useState("");
     const [erro, setErro] = useState([]);
+    const [isCreating, setIsCreating] = useState(false);
+    const [isCreated, setIsCreated] = useState(false);
 
     const handleOnChangeAndar = (e) => {
         setAndar(e.target.value);
         console.log(e.target.value);
     }
 
-    const handleOnChangeSexo = (e) => {
+    const handleOnChangePlaces = (e) => {
         setGeneroBanheiro(e.target.value);
         console.log(e.target.value);
     }
@@ -33,24 +37,31 @@ export default () => {
 
     const clicarRegister = async (e) => {
         e.preventDefault();
+        setIsCreating(true);
         try {
             const response = await api.post("/alert", {andar, generoBanheiro, mensagem}, {headers: {'Authorization': localStorage.getItem("token")}});
             if(response.status === 200){
-                alert("Alerta criado com sucesso");
-                history.push("/home");
+                setIsCreated(true);
             }
         } catch (error) {
             setErro(error);
         }
     }
 
+    let places = ["","Banheiro masculino", "Banheiro feminino"];
+    let andarItems = ["", "Terreo", "Primeiro andar"];
+
     return(
-        <form className="form-div" onSubmit={(e) => clicarRegister(e)}>
-            <NumberPicker icon={faBuilding} onChange={handleOnChangeAndar} placeholder="Andar" id="Andar"/>
-            <Combobox itens={["","Masculino", "Feminino"]} onChange={handleOnChangeSexo} icon={faVenusMars}/>
-            <Textbox icon={faCommentAlt} onChange={handleOnChangeMensagem} placeholder="Mensagem" id="msg" required />
-            <Button placeholder="Criar"/>
-            {!erro ? "Algo de errado!" : ""}
-        </form>
+        <div className="create-body">
+            {isCreating ? (!isCreated ? <Loading /> : <Successful />)  :  
+                <form className="form-div" onSubmit={(e) => clicarRegister(e)}>
+                    <Combobox itens={andarItems} onChange={handleOnChangeAndar} icon={faBuilding}/>
+                    <Combobox itens={places} onChange={handleOnChangePlaces} icon={faLocationArrow}/>
+                    <Textbox icon={faCommentAlt} onChange={handleOnChangeMensagem} placeholder="Mensagem" id="msg" required />
+                    <Button placeholder="Criar" color="green"/>
+                    {!erro ? "Algo de errado!" : ""}
+                </form>
+            }
+        </div>
     );
 }
