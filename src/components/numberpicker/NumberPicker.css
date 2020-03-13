@@ -1,18 +1,19 @@
 .number-picker {
     display: flex;
     margin: 5px;
-    padding: 5px;
+    background-color: white;
 }
 
 .picker{
     border: none;
-    background-color: #333333;
-    color: white;
+    color: black;
+    width: 27vh;
 }
 .picker-child{
     margin: 5px;
-    color: white;
+    color: #8dc63f;
     font-size: 20px;
+    padding: 5px;
 }
 
 ::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
