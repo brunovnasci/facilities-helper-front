@@ -1,15 +1,9 @@
 import React from 'react';
 import Button from '../button/Button';
 
-import history from '../../services/history';
-
 import './Successful.css';
 
-export default () => {
-
-    const pushMenu = () => {
-        history.push("home");
-    }
+export default (props) => {
 
     return(
         <div className="loading-body">
@@ -17,9 +11,9 @@ export default () => {
             <div className="centralizar-v">
                 <div className="centralizar-v-children-mod"></div>
                 <div>
-                    <form onSubmit={() => pushMenu()}>
-                        <h4 className="response">Alerta criado!</h4>
-                        <Button color="green" placeholder="Voltar ao menu"/>
+                    <form onSubmit={() => props.push()}>
+                        <h4 className="response">{props.title}</h4>
+                        <Button color="green" placeholder={props.titlebtn}/>
                     </form>
                 </div>
                 <div className="centralizar-v-children-mod"></div>
