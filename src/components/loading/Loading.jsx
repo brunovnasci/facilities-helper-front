@@ -8,7 +8,7 @@ export default () => {
             <div className="centralizar-h"></div>
             <div className="centralizar-v">
                 <div className="centralizar-v-children"></div>
-                <div class="lds-ripple">
+                <div className="lds-ripple">
                     <div></div>
                     <div></div>
                 </div>
