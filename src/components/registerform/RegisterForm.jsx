@@ -95,7 +95,7 @@ export default () => {
 
     return(
         <>
-        {erro.length != 0 ? erro.map((erroTitle, index) => {
+        {erro.length !== 0 ? erro.map((erroTitle, index) => {
            return <ErrorCard key={index} error={erroTitle}/>
         }) : ""}
         {isLogging ? (!isLogged ? <Loading /> : history.push("")) : 
