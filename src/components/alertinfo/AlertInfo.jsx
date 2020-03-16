@@ -23,7 +23,7 @@ export default (props) => {
                 </div>
                 <button className="altstatus-button" onClick={props.modificarStatusAlerta}>{props.alert.estaFeita ? "Marcar como não atendido" : "Marcar como atendido"}</button>
             </div>
-            <PersonCard id={props.alert.person}/>
+            <PersonCard person={props.alert.person}/>
         </>
     );
 }
