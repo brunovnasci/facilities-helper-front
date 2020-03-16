@@ -52,7 +52,7 @@ const Login = () => {
 
     return(
         <>
-        {erro ? <ErrorCard error={erro} /> : console.log("sem erro")}
+        {erro ? <ErrorCard error={erro} /> : ""}
         {isLogging ? (!isLogged ? <Loading /> : history.push("/home")) : 
             <div className="form-body">
                 <form className="form-div" onSubmit={(e) => clicarNoLogin(e)}>
