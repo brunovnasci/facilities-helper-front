@@ -1,0 +1,7 @@
+.error-body{
+    display: flex;
+    background-color: #ff3e1a;
+    margin: 2vh 5vw 2vh 5vw;
+    padding: 10px;
+    border-radius: 5px;
+}
