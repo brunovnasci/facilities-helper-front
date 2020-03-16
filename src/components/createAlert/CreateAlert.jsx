@@ -16,7 +16,7 @@ import './CreateAlert.css';
 export default () => {
 
     const [andar, setAndar] = useState("");
-    const [generoBanheiro, setGeneroBanheiro] = useState("");
+    const [comodo, setComodo] = useState("");
     const [mensagem, setMensagem] = useState("");
     const [erro, setErro] = useState([]);
     const [isCreating, setIsCreating] = useState(false);
@@ -28,7 +28,7 @@ export default () => {
     }
 
     const handleOnChangePlaces = (e) => {
-        setGeneroBanheiro(e.target.value);
+        setComodo(e.target.value);
         console.log(e.target.value);
     }
 
@@ -40,7 +40,7 @@ export default () => {
         e.preventDefault();
         setIsCreating(true);
         try {
-            const response = await api.post("/alert", {andar, generoBanheiro, mensagem}, {headers: {'Authorization': localStorage.getItem("token")}});
+            const response = await api.post("/alert", {andar, comodo, mensagem}, {headers: {'Authorization': localStorage.getItem("token")}});
             if(response.status === 200){
                 setIsCreated(true);
             }

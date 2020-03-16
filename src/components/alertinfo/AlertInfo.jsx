@@ -10,7 +10,7 @@ export default (props) => {
             <div className="alertinfo-body">
                 <div className="group">
                     <h4>{props.alert.andar}</h4>
-                    <h4>{props.alert.generoBanheiro}</h4>
+                    <h4>{props.alert.comodo}</h4>
                 </div>
                 <h4>Mensagem:</h4>
                 <div className="alert-message">
