@@ -1,9 +1,7 @@
 import React, { useState, useEffect } from 'react';
-import Card from '../../components/alertCard/AlertCard';
-import WelcomeCard from '../../components/welcomeCard/WelcomeCard';
-import DenunciaCard from '../../components/denunciacard/DenunciaCard';
 import Loading from '../../components/loading/Loading';
-import TitleCard from '../../components/titleCard/TitleCard';
+import CleanerPage from './cleanerPage/CleanerPage';
+import PersonPage from './personPage/PersonPage';
 
 import api from '../../services/api';
 import history from '../../services/history';
@@ -30,15 +28,6 @@ export default () => {
         }
     }
 
-    const returnCardDenuncia = () => {
-        return(
-            <>
-                <WelcomeCard person={person} />
-                <DenunciaCard />
-            </>
-        );
-    }
-
     useEffect( () => {
         if(!localStorage.getItem("token")){
             history.push("");
@@ -63,22 +52,13 @@ export default () => {
         // eslint-disable-next-line
     }, []);
 
-    const returnAlerts = () =>{
-        return(
-            <>
-                <WelcomeCard person={person} />
-                <div>
-                    {alerts.length !== 0 ? alerts.map( (alert) => 
-                        <Card alert={alert} key={alert.id}/>
-                    ) : <TitleCard title="Ops! Ainda não há alertas!"/>}
-                </div>
-            </>
-        );
-    }
-
     return(
         <div className="home-body">
-            {isLoaded ? isCleaner ? returnAlerts() : returnCardDenuncia() : <Loading />}
+            {
+            isLoaded ? 
+                (isCleaner ? <CleanerPage person={person} alerts={alerts} /> : <PersonPage person={person} />)
+            :<Loading />
+            }
         </div>
     );
 }

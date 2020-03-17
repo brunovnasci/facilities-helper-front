@@ -1,4 +1,4 @@
-.denuncia-body {
+.redirect-body {
     padding: 10px;
     border-style: solid;
     background-color: white;
@@ -6,7 +6,7 @@
     margin: 2vh 8vw 0vh 8vw;
 }
 
-.link-denuncia {
+.link-redirect {
     text-decoration: none;
     color: #002c41;
     margin: 15px;
