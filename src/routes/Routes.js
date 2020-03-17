@@ -1,8 +1,10 @@
-export default {
-    "login":"/",
-    "home":"/home",
-    "create":"/create",
-    "register":"/register",
-    "view-alert":"/alert/:id",
-    "other":"/*"
-}
+const ROUTES = {
+    LOGIN: '/',
+    HOME: '/home',
+    CREATE: '/create',
+    REGISTER: '/register',
+    VIEW_ALERT: '/alert/:id',
+    OTHERS: '/*',
+};
+
+export default ROUTES;
