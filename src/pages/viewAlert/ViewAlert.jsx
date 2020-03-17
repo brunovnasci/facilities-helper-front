@@ -12,6 +12,8 @@ export default (props) => {
     const [alert, setAlert] = useState(null);
     const [erro, setErro] = useState(null);
     const [isloaded, setIsLoaded] = useState(false);
+    const [person, setPerson] = useState({});
+    const [isCleaner, setIsCleaner] = useState(false);
 
     const paramId = props.match.params.id;
 
@@ -37,13 +39,30 @@ export default (props) => {
         async function getAlert(){
             try {
                 const response = await api.get("/alert/"+paramId, {headers: {'Authorization': localStorage.getItem("token")}});
-                setAlert(response.data);  
-                setIsLoaded(true); 
+                setAlert(response.data); 
+                getPersonData();
             } catch (error) {
                 setErro(error);
                 setIsLoaded(true); 
             }
         }
+
+        async function getPersonData() {
+            try {
+                const response = await api.get("/person", {headers: {'Authorization': localStorage.getItem("token")}});
+                setPerson(response.data);
+                if(response.data.role === "CLEANER"){
+                    setIsCleaner(true);
+                    setIsLoaded(true); 
+                }else{
+                    setIsLoaded(true);
+                }
+            } catch (error) {
+                localStorage.removeItem("token");
+                history.push("");
+            }
+        }
+
         getAlert();
     }, [paramId]);
 
@@ -71,7 +90,7 @@ export default (props) => {
 
     const returnAlert = () => {
         return(
-            <AlertInfo alert={alert} timeConverter={timeConverter} modificarStatusAlerta={modificarStatusAlerta}/>
+            <AlertInfo alert={alert} isCleaner={isCleaner} person={person} timeConverter={timeConverter} modificarStatusAlerta={modificarStatusAlerta}/>
         );
     }
 

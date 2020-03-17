@@ -21,7 +21,8 @@ export default (props) => {
                 <div className="alert-message">
                     <h4>{props.alert.estaFeita ? "Foi atendido "+props.timeConverter(props.alert.dataDeConclusao) : "Não foi atendido"}</h4>
                 </div>
-                <button className="altstatus-button" onClick={props.modificarStatusAlerta}>{props.alert.estaFeita ? "Marcar como não atendido" : "Marcar como atendido"}</button>
+                {!props.isCleaner ? "" : <button className="altstatus-button" onClick={props.modificarStatusAlerta}>{props.alert.estaFeita ? "Marcar como não atendido" : "Marcar como atendido"}</button>}
+                
             </div>
             <PersonCard person={props.alert.person}/>
         </>

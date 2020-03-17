@@ -8,6 +8,7 @@ import TopBar from '../components/topbar/TopBar';
 import LoginTopBar from '../components/logintopbar/LoginiTopBar';
 import Register from '../pages/registerPage/RegisterPage';
 import Create from '../pages/createAlert/CreateAlert';
+import MyAlerts from '../pages/myAlertsPage/MyAlertPage';
 
 import history from '../services/history';
 import ROUTES from '../routes/Routes';
@@ -24,6 +25,7 @@ export default () => {
           <Route exact path={ROUTES.HOME} component={() => <TopBar nomePagina="Home"/>} />
           <Route exact path={ROUTES.CREATE} component={() => <TopBar nomePagina="Criar alerta"/>} />
           <Route exact path={ROUTES.VIEW_ALERT} component={() => <TopBar nomePagina="Visualizar Alerta" />} />
+          <Route exact path={ROUTES.MY_ALERTS} component={() => <TopBar nomePagina="Meus alertas" />} />
           <Route exact path={ROUTES.OTHERS} component={LoginTopBar} />
         </Switch>
         <Switch>
@@ -32,6 +34,7 @@ export default () => {
           <Route exact path={ROUTES.CREATE} component={Create} />
           <Route exact path={ROUTES.REGISTER} component={Register} />
           <Route exact path={ROUTES.VIEW_ALERT} component={ViewAlert} />
+          <Route exact path={ROUTES.MY_ALERTS} component={MyAlerts} />
           <Route exact path={ROUTES.OTHERS} component={Login} />
         </Switch>
       </Router>

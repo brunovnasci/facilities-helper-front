@@ -4,6 +4,7 @@ const ROUTES = {
     CREATE: '/create',
     REGISTER: '/register',
     VIEW_ALERT: '/alert/:id',
+    MY_ALERTS: '/myalerts',
     OTHERS: '/*',
 };
 
