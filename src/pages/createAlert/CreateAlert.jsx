@@ -2,11 +2,11 @@ import React from 'react';
 import { useState } from 'react';
 
 import { faBuilding, faLocationArrow,faCommentAlt } from '@fortawesome/free-solid-svg-icons';
-import Textbox from '../textbox/Textbox';
-import Button from '../button/Button';
-import Loading from '../loading/Loading';
-import Combobox from '../combobox/Combox';
-import Successful from '../successful/Successful';
+import Textbox from '../../components/textbox/Textbox';
+import Button from '../../components/button/Button';
+import Loading from '../../components/loading/Loading';
+import Combobox from '../../components/combobox/Combox';
+import Successful from '../../components/successful/Successful';
 
 import api from '../../services/api';
 import history from '../../services/history';

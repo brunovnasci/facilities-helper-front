@@ -1,9 +1,9 @@
 import React, { useEffect,useState } from 'react';
 import history from '../../services/history';
-import AlertInfo from '../alertinfo/AlertInfo';
-import Loading from '../loading/Loading';
+import AlertInfo from '../../components/alertinfo/AlertInfo';
+import Loading from '../../components/loading/Loading';
 
-import './Alert.css';
+import './ViewAlert.css';
 
 import api from '../../services/api';
 

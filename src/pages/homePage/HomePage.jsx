@@ -1,14 +1,14 @@
 import React, { useState, useEffect } from 'react';
-import Card from '../alertCard/AlertCard';
-import WelcomeCard from '../welcomeCard/WelcomeCard';
-import DenunciaCard from '../denunciacard/DenunciaCard';
-import Loading from '../loading/Loading';
-import TitleCard from '../titleCard/TitleCard';
+import Card from '../../components/alertCard/AlertCard';
+import WelcomeCard from '../../components/welcomeCard/WelcomeCard';
+import DenunciaCard from '../../components/denunciacard/DenunciaCard';
+import Loading from '../../components/loading/Loading';
+import TitleCard from '../../components/titleCard/TitleCard';
 
 import api from '../../services/api';
 import history from '../../services/history';
 
-import './Home.css';
+import './HomePage.css';
 
 export default () => {
 

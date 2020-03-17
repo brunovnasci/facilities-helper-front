@@ -1,13 +1,13 @@
 import React from 'react';
 import { Router, Switch, Route } from 'react-router-dom';
 
-import Login from '../components/loginform/LoginForm';
-import Home from '../components/home/Home';
-import Alert from '../components/alert/Alert';
+import Login from '../pages/loginPage/LoginPage';
+import Home from '../pages/homePage/HomePage';
+import ViewAlert from '../pages/viewAlert/ViewAlert';
 import TopBar from '../components/topbar/TopBar';
 import LoginTopBar from '../components/logintopbar/LoginiTopBar';
-import Register from '../components/registerform/RegisterForm';
-import Create from '../components/createAlert/CreateAlert';
+import Register from '../pages/registerPage/RegisterPage';
+import Create from '../pages/createAlert/CreateAlert';
 
 import history from '../services/history';
 import path from '../routes/Routes';
@@ -31,7 +31,7 @@ export default () => {
           <Route exact path={path.home} component={Home} />
           <Route exact path={path.create} component={Create} />
           <Route exact path={path.register} component={Register} />
-          <Route exact path={path["view-alert"]} component={Alert} />
+          <Route exact path={path["view-alert"]} component={ViewAlert} />
           <Route exact path={path.other} component={Login} />
         </Switch>
       </Router>

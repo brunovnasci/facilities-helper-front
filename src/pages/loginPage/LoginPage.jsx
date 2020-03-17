@@ -3,14 +3,14 @@ import { withRouter } from 'react-router';
 import { Link } from 'react-router-dom';
 import { faUser, faUnlockAlt } from '@fortawesome/free-solid-svg-icons';
 
-import Textbox from '../textbox/Textbox';
-import Button from '../button/Button';
-import Loading from '../loading/Loading';
-import ErrorCard from '../errorCard/ErrorCard';
+import Textbox from '../../components/textbox/Textbox';
+import Button from '../../components/button/Button';
+import Loading from '../../components/loading/Loading';
+import ErrorCard from '../../components/errorCard/ErrorCard';
 
 import history from '../../services/history';
 import api from '../../services/api';
-import './LoginForm.css';
+import './LoginPage.css';
 
 const Login = () => {
     

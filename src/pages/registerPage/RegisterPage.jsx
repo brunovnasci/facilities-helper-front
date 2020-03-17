@@ -2,10 +2,10 @@ import React, { useState } from 'react';
 
 import { faUser, faUnlockAlt,faEnvelope } from '@fortawesome/free-solid-svg-icons';
 
-import Textbox from '../textbox/Textbox';
-import Button from '../button/Button';
-import Loading from '../loading/Loading';
-import ErrorCard from '../errorCard/ErrorCard';
+import Textbox from '../../components/textbox/Textbox';
+import Button from '../../components/button/Button';
+import Loading from '../../components/loading/Loading';
+import ErrorCard from '../../components/errorCard/ErrorCard';
 
 import history from '../../services/history';
 import api from '../../services/api';
